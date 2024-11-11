@@ -1,38 +1,189 @@
-.App {
+.mainnav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background-color: rgb(202, 124, 176);
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
+}
+.mainnav a, .sidebar a {
+  text-decoration: none;
+  color: inherit; /* Keeps the color as specified in the parent or `li` styling */
+}
+.mainnav ul{
+  display: flex;
+  gap: 100px;
+  
+}
+.mainnav ul li{
+  list-style: none;
+  color: white;
+  position: relative;
+  padding: 4px 0;
+
+}
+.mainnav ul li::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f2f2f2; /* Border color */
+  transition: width 0.3s ease; /* Transition for smooth animation */
+}
+
+.mainnav ul  li:hover::before {
+  width: 100%; /* Expands the border from left to right on hover */
+}
+.sidebar {
+  position: fixed;
+  top: 69px;
+  height: 100vh;
+  width: 160px;
+  background-color: rgb(202, 124, 176);
+
+  z-index: 999;
+  left: -100%; /* Sidebar hidden by default */
+  transition: left 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.active {
+  left: 0px; /* Sidebar slides in */
+}
+.sidebarUl li{
+  padding: 10px;
+  color: white;
+  list-style: none;
+
+  font-size: 14px;
+}
+.navbarhambergerAndClose{
+  display: flex; 
+  justify-content: flex-end;
+}
+/* home page */
+/* Base container for centering and responsiveness */
+.HomeContainer{
+  margin-top: 100px;
+}
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
+}
+.card-container a{
+  text-decoration: none;
+}
+/* Card Styling */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  transition: transform 0.2s ease;
+  overflow: hidden;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card:hover {
+  transform: scale(1.05); /* Subtle scale effect on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Image Styling */
+.card-image {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+/* Card Content */
+.card-content {
+  padding: 15px;
+  text-align: start;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.card-description {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.card-button {
+  padding: 10px 20px;
+  background-color: #7e22ce;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+  background-color: #5b1597;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .card-container {
+    padding: 15px;
+  }
+  
+  .card {
+    max-width: 100%;
+  }
+  
+  .card-title {
+    font-size: 1.3em;
+  }
+  
+  .card-description {
+    font-size: 0.9em;
+  }
+  
+  .card-button {
+    font-size: 0.9em;
   }
 }
+/* end */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* filter sort ui */
+.filter-sort-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-card {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
 }
+
+/* end */
