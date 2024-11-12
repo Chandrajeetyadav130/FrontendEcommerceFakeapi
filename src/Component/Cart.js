@@ -13,7 +13,7 @@ const Cart = () => {
 
             {state.items.map((item) => (
                 <div key={item.id}>
-                    <p>{item.name}</p>
+                    <p>{item.category}</p>
                     <p>Price: ${item.price}</p>
                     <button onClick={() => removeFromCart(item)}>Remove</button>
                 </div>
