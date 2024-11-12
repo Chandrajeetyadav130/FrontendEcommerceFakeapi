@@ -83,10 +83,10 @@ const Home = () => {
               <img src={val.image} alt={val.title} className="card-image" />
               <div className="card-content">
                 <h2 className="card-title">{val.category}</h2>
-                <h2 className="card-title">{val.title}</h2>
+                <h2 className="card-title">{`${val.title.slice(0,24)}...`}</h2>
                 <h2 className="card-title">Price: ${val.price}</h2>
 
-                <p className="card-description">{val.description}</p>
+                <p className="card-description">{`${val.description.slice(0,90)}...`}</p>
               </div>
             </div>
           </Link>
