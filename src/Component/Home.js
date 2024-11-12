@@ -84,6 +84,8 @@ const Home = () => {
               <div className="card-content">
                 <h2 className="card-title">{val.category}</h2>
                 <h2 className="card-title">{val.title}</h2>
+                <h2 className="card-title">Price: ${val.price}</h2>
+
                 <p className="card-description">{val.description}</p>
               </div>
             </div>
